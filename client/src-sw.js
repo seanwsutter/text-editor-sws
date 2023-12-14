@@ -26,20 +26,6 @@ warmStrategyCache({
 });
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
-
-const paths = ['style', 'script', 'worker']
-
-registerRoute(({ request }) => paths.includes(request.destination),
-  new StaleWhileRevalidate({
-    cacheName: 'asset-cache',
-    plugins: [
-      new CacheableResponsePlugin({
-        statuses: [0, 200],
-      }),
-    ],
-  })
-);
-
 /*
   TODO:
 
@@ -69,6 +55,23 @@ registerRoute(({ request }) => paths.includes(request.destination),
 
   Something like:
      const paths = []   // complete the array
+*/
+
+const paths = ['style', 'script', 'worker']
+
+registerRoute(({ request }) => paths.includes(request.destination),
+  new StaleWhileRevalidate({
+    cacheName: 'asset-cache',
+    plugins: [
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
+      }),
+    ],
+  })
+);
+
+/*
+  TODO:
 
 We also need to be able to reference whatever destination is being sought. This 
 is part of the {request} object being injected below. So we would get that value 

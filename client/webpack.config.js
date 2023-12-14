@@ -88,7 +88,7 @@ module.exports = () => {
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: '/',
-        publicPath: '/',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
@@ -96,7 +96,7 @@ module.exports = () => {
             destination: path.join('assets', 'icons'),
           },
         ],
-      })
+      }),
     ],
     /*
           TODO: In this array, we need to configure the rules 

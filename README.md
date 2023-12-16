@@ -6,14 +6,20 @@ Using this existing web application, the goal is to set up it up and configure i
 
 ## Table of Contents
 - [Description](#description)
-- [Usage](#usage)
+- [Installation](#installation)
 - [Testing](#installation)
 - [Preview](#preivew)
 - [Deployment](#deployment)
 
-## Usage
+## Installation
 
-When we enter `npm run start` from the root directory, the application will run and start.
+Click the Install button in the PWA!
+
+![Install](https://i.imgur.com/UfRnCWa.png)
+
+Alternatively click the icon in the right side of the URL bar. Shown Below
+
+![Install](https://i.imgur.com/5q0eZav.png)
 
 ## Testing
 
@@ -25,9 +31,19 @@ Look inside the package.json in the project root folder. Notice also a script na
   
 In the *client/package.json* file, you'll see that the build script invokes Webpack, and from there Webpack does its thing.
 
-## Preview 
+## Uninstall
 
-![Preview](https://i.imgur.com/Sg4hDdE.png)
+Close the PWA or click uninstall shown here:
+
+![Uninstall](https://i.imgur.com/Wfh2KSo.png)
+
+If you need to start from scratch and remove the existing PWA:
+
+* Delete the PWA from your hard drive
+* Kill the server session running in VS Code
+* In Chrome, go to localhost:3000, If it does load open up the dev console, go to Application -> Service Workers and click the Unregister Worker link.
+
+![Uninstall](https://i.imgur.com/Wfh2KSo.png)
 
 ## Deployment
 
